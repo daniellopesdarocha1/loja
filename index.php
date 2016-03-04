@@ -1,12 +1,5 @@
 <?php  include("cabecalho.php") ?>
 
-	<?php $nome = "Daniel"; ?>
-	Loja do <?php echo $nome; ?>
-	Bem vindo!
-
-	<?php
-		$total = 10 + 20 / 4;
-		echo $total;
-	?>
+	<h1>Bem vindo!</h1>
 
 <?php include("rodape.php") ?>
