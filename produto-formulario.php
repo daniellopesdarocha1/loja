@@ -1,4 +1,5 @@
 <?php  include("cabecalho.php") ?>
+<?php  include("conecta.php") ?>
 
 <h1>Formulário de Cadastro</h1>
 <form action="adiciona-produto.php">
