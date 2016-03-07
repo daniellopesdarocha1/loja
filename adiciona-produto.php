@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 	include("cabecalho.php");
 	include("conecta.php"); 
