@@ -1,14 +1,25 @@
-<?php include("cabecalho.php"); ?>
-<?php include("conecta.php"); ?>
-
 <?php 
 
-	$resultado = mysqli_query($conexao, "SELECT * FROM produtos");
+	include("cabecalho.php");
+	include("conecta.php");
+	include("banco-produto.php");
 
-	while ($produto = mysqli_fetch_assoc($resultado)) {
-		echo $produto['nome'] . "<br/>";
-	}
+	$produtos = listaProdutos($conexao);
+?>
 
+<table class="table table-striped table-bordered">
+
+<?php 
+	foreach ($produtos as $produto):
  ?>
+ 		<tr>
+			<td><?= $produto['nome'] ?></td>
+			<td><?= $produto['preco'] ?></td>
+		</tr>
+<?php 
+	endforeach
+ ?>
+
+</table>
 
 <?php include("rodape.php"); ?>
