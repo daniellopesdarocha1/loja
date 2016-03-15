@@ -2,7 +2,6 @@
 <head>
     <title>Minha loja</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/loja.css" rel="stylesheet" />
 </head>
@@ -18,7 +17,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="produto-formulario.php">Adiciona Produto</a></li>
                 <li><a href="lista-produto.php">Produtos</a></li>
-                <li><a href="#">Sobre</a></li>
+                <!--<li><a href="#">Sobre</a></li> -->
             </ul>
         </div>
     </div>
