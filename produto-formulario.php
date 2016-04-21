@@ -10,7 +10,7 @@
 
 <h1>Formulário de Cadastro</h1>
 <form action="adiciona-produto.php" method="POST">
-	<table >
+	<table class="table table-responsive">
 		<tr>
 			<td>Produto</td>
 			<td><input class="form-control" type="text" name="nome"></td>
