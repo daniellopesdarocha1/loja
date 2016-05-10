@@ -8,8 +8,13 @@
 	<p class="alert-danger">Usuário ou senha inválida</p>
 <?php }?>
 
-
 	<h1>Bem vindo!</h1>
+	
+	<?php if(isset($_COOKIE["usuario_logado"])) { ?>
+
+		<p class="text-success">Você está logado como <?=$_COOKIE["usuario_logado"]?>.</p>
+
+	<?php } else { ?>
 
 	<br>
 	<p> "Sistema para cadastro de Produtos"</p>
@@ -30,4 +35,5 @@
 			</tr>
 		</table>
 	</form>
+<?php } ?>
 <?php include("rodape.php") ?>
