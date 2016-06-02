@@ -3,6 +3,10 @@
 	include("conecta.php");
 	include("banco-produto.php");
 	include("banco-categoria.php");
+	include('logica-usuario.php');
+
+
+	verificaUsuario();
 ?>
 
 <?php

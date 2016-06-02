@@ -1,6 +1,6 @@
 <?php  
 	include("cabecalho.php"); 
-	include ("logica-usuario.php");
+	include('logica-usuario.php');
 ?>
 
 <?php if(isset($_GET["logout"]) && $_GET["logout"]==true) { ?>
@@ -18,9 +18,11 @@
 <?php if(isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"]==true){ ?>
 	<p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
 <?php }?>
-
-	<h1>Bem vindo!</h1>
-	
+	<div>
+		<h4>
+			Sistema para cadastro de Produtos
+		</h4>
+	</div>
 	<?php if(usuarioEstaLogado()) { ?>
 
 		<p class="text-success">
@@ -31,9 +33,12 @@
 	<?php } else { ?>
 
 	<br>
-	<p> "Sistema para cadastro de Produtos"</p>
-
-	<h2>Login</h2>
+	<div>
+		<p>Para utilizar o sistema entre com o </p>
+		<p>Email: <b>email@gmail.com</b></p>
+		<p>e Senha: <b>123456</b></p>
+	</div>
+	<h3>Login</h3>
 	<form action="login.php" method="post">
 		<table class="table">
 			<tr>
