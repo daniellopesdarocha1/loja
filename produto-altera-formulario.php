@@ -9,52 +9,52 @@
     $produto = buscaProduto($conexao, $id);
     $categorias = listaCategorias($conexao);
 ?>            
-    <h1>Alterando produto</h1>
-    <form action="altera-produto.php" method="post">
-        <input type="hidden" name="id" value="<?=$produto['id']?>" />
-        <table class="table">
-            <tr>
-                <td>Nome</td>
-                <td> <input class="form-control" type="text" name="nome" value="<?=$produto['nome']?>"></td>
-            </tr>
-            <tr>
-                <td>Preço</td>
-                <td><input  class="form-control" type="number" name="preco" value="<?=$produto['preco']?>"></td>
-            </tr>
-            <tr>
-                <td>Descrição</td>
-                <td><textarea class="form-control" name="descricao"><?=$produto['descricao']?></textarea></td>
-            </tr>
-            <?php
-                $usado = $produto['usado'] ? "checked='checked'" : "";
-            ?>
-            <tr>
-                <td></td>
-                <td><input type="checkbox" name="usado" <?=$usado?> value="true"> Usado </td>
-            </tr>
-            <tr>
-                <td>Categoria</td>
-                <td>
-                    <select name="categoria_id" class="form-control">
-                    <?php 
-
-                        foreach($categorias as $categoria) : 
-                            $essaEhACategoria = $produto['categoria_id'] == $categoria['id'];
-                            $selecao = $essaEhACategoria ? "selected='selected'" : "";
-
+    <h1>Alterar Produto</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <form action="altera-produto.php" method="POST" name="formAdicionaProduto" onsubmit="return validarAdicionarPreco()">
+                    <input type="hidden" name="id" value="<?=$produto['id']?>" />
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input class="form-control" type="text" name="nome" value="<?=$produto['nome']?>" required="required" placeholder="Informe o nome do produto">
+                    </div>
+                    <div class="form-group">
+                        <label>Preço</label>
+                        <input  class="form-control" type='number' step=0.01 name="preco" value="<?=$produto['preco']?>" placeholder="Informe o preço do produto">
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" name="descricao" required="required" placeholder="Informe uma descrição para o produto"><?=$produto['descricao']?></textarea>
+                    </div>
+                    <?php
+                        $usado = $produto['usado'] ? "checked='checked'" : "";
                     ?>
-                        <option value="<?=$categoria['id']?>" <?=$selecao?>>
-                                <?=$categoria['nome']?>
-                        </option>
-                    <?php endforeach ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-primary" type="submit">Alterar</button>
-                </td>
-            </tr>
-        </table>
-    </form>
+                    <div class="form-group">
+                        <input type="checkbox" name="usado" <?=$usado?> value="true"> <label>Usado</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                            <select name="categoria_id" class="form-control">
+                            <?php 
+
+                                foreach($categorias as $categoria) : 
+                                    $essaEhACategoria = $produto['categoria_id'] == $categoria['id'];
+                                    $selecao = $essaEhACategoria ? "selected='selected'" : "";
+
+                            ?>
+                                <option value="<?=$categoria['id']?>" <?=$selecao?>>
+                                        <?=$categoria['nome']?>
+                                </option>
+                            <?php endforeach ?>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Alterar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 <?php include("rodape.php"); ?>

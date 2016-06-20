@@ -17,12 +17,12 @@
 
 	if(alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) {
 ?>
-    	<p class="text-success">O produto <?= $nome ?>, <?= $preco ?> foi alterado.</p>
+    	<p class="text-center text-success">O produto <?= $nome ?>, <?= $preco ?> foi alterado.</p>
 <?php 
 	} else {
     	$msg = mysqli_error($conexao);
 ?>
-    <p class="text-danger">O produto <?= $nome ?> não foi alterado: <?= $msg?></p>
+    <p class="text-center text-danger">O produto <?= $nome ?> não foi alterado: <?= $msg?></p>
 <?php
 	}
 ?>
